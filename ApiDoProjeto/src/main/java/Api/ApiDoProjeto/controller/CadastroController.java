@@ -30,6 +30,13 @@ public class CadastroController {
         return "cadastro/cadastro";
     }
 
+    // Método que grava as informações do cadastro
+    @PostMapping
+    public String salvarCadastro(CadastroModel cadastro) {
+        repository.save(cadastro);
+        return "redirect:/cadastro";
+    }
+
     // Método para listagem dos usuários cadastrados
     @GetMapping("/listagem")
     public String carregarPaginaListagem(Model model) {
@@ -37,10 +44,4 @@ public class CadastroController {
         return "atendente/listar_usuarios";
     }
 
-    // Método que grava as informações do cadastro
-    @PostMapping
-    public String salvarCadastro(CadastroModel cadastro) {
-        repository.save(cadastro);
-        return "redirect:/cadastro";
-    }
 }

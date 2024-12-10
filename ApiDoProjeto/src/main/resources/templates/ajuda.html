@@ -80,7 +80,7 @@
             <section class="contato" id="contato">
                 <hr>
                 <h1 class="titulo2">Fale Conosco</h1>
-                <form class="contato-formulario" th:action="@{/fale-conosco}" th:object="${contato}">
+                <form class="contato-formulario" th:action="@{/fale-conosco}" th:object="${contato}" method="post">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required th:field="*{nome}"><br>
 

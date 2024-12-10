@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/fale-conosco")
+@RequestMapping("/faleconosco")
 public class ContatoController {
 
     @Autowired
@@ -24,18 +24,18 @@ public class ContatoController {
         return "ajuda";
     }
 
-    // Método para listagem das mensagens cadastradas
-    // @GetMapping("/listagem-mensagens")
-    // public String carregarPaginaListagem(Model model) {
-    // model.addAttribute("contatos", repository.findAll());
-    // return "atendente/listar_mensagens";
-    // }
-
     // Método que grava as informações das mensagens
     @PostMapping
     public String salvarContato(ContatoModel contato) {
         repository.save(contato);
-        return "redirect:/fale-conosco";
+        return "redirect:/faleconosco";
+    }
+
+    // Método para listagem das mensagens cadastradas
+    @GetMapping("/listagem")
+    public String carregarPaginaListagem(Model model) {
+    model.addAttribute("contatos", repository.findAll());
+        return "atendente/listar_ajuda";
     }
 
 }

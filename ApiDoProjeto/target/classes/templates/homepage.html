@@ -36,7 +36,17 @@
               <li><a class="dropdown-item" href="#scrollspyHeading4">Barra de chocolate</a></li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link fw-semibold" data-bs-toggle="dropdown" href="#">Listagens</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" th:href="@{/cadastro/listagem}">Usuários</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" th:href="@{/faleconosco/listagem}">Mensagens</a></li>
+              <li><hr class="dropdown-divider"></li>
+            </ul>
+          </li>
             <a class="nav-link fw-semibold" aria-current="page"  th:href="@{/login}">Login</a>
+            <a class="nav-link fw-semibold" aria-current="page"  th:href="@{/faleconosco}">Contato</a>
           </li>        
         </ul>
         <form class="d-flex" role="search">
